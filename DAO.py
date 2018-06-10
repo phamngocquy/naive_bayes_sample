@@ -4,6 +4,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 import numpy as np
 from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import MultiLabelBinarizer
+from unidecode import unidecode
 
 config = {
     'user': 'root',
@@ -20,7 +21,11 @@ cursor.execute(sql)
 data = cursor.fetchall()
 
 # data_1
-tex = [[row[3]] for row in data]
+# tex = [[row[3]] for row in data]
+tex = []
+for row in data:
+    tex.append([row[3]])
+    tex.append([unidecode(row[3])])
 for i in range(0, len(tex)):
     vectorizer = CountVectorizer()
     vectorizer.fit(tex[i])
@@ -35,6 +40,7 @@ print(len(mlb.classes_))
 # data2
 s1 = []
 for (row) in data:
+    s1.append(row[12])
     s1.append(row[12])
 
 clf = GaussianNB()
@@ -57,7 +63,6 @@ while True:
                 check_correct = 1
                 print("index: " + str(i + 1))
                 print("true: " + mlb.classes_[i])
-
                 break
         if check_correct == 0:
             result_array.append(0)
