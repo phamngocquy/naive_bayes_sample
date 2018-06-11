@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/haku/PycharmProjects/DemoOnce/trained_variables.ckpt"
+all_model_checkpoint_paths: "/home/haku/PycharmProjects/DemoOnce/trained_variables.ckpt"

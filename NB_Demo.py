@@ -4,6 +4,17 @@ import numpy as np
 from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import MultiLabelBinarizer
 from unidecode import unidecode
+from sklearn.externals import joblib
+from pathlib import Path
+
+
+def load_data(filepath):
+    my_clf_file = Path("train_data.pkl")
+    if my_clf_file.is_file():
+        clf = joblib.load("train_data.pkl")
+    else:
+        print("file not exit")
+
 
 config = {
     'user': 'root',
@@ -12,10 +23,11 @@ config = {
     'database': 'price_management',
     'raise_on_warnings': True,
 }
+print("training...")
 cnx = mysql.connector.connect(**config)
 
 cursor = cnx.cursor(buffered=True)
-sql = "SELECT * FROM products LIMIT 1000"
+sql = "SELECT * FROM products"
 cursor.execute(sql)
 data = cursor.fetchall()
 
@@ -32,10 +44,10 @@ for i in range(0, len(tex)):
 
 mlb = MultiLabelBinarizer()
 v = mlb.fit_transform(tex)
-print(v)
-print(mlb.classes_)
-print(len(mlb.classes_))
-np.savetxt("product_matrix.csv", v, delimiter=",")
+# print(v)
+# print(mlb.classes_)
+# print(len(mlb.classes_))
+# np.savetxt("product_matrix.csv", v, delimiter=",") // warning
 
 # data2
 s1 = []
@@ -44,10 +56,11 @@ for (row) in data:
     s1.append(row[12])
 
 clf = GaussianNB()
-print(s1)
 clf.fit(v, np.array(s1))
 
-print(np.asarray(s1))
+joblib.dump(clf, "train_data.pkl")
+
+print("training complete")
 while True:
     # input
     s = input("Enter something: ")

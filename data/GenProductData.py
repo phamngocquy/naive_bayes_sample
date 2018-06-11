@@ -24,7 +24,6 @@ data = cursor.fetchall()
 tex = []
 for row in data:
     tex.append([row[3]])
-    tex.append([unidecode(row[3])])
 for i in range(0, len(tex)):
     vectorizer = CountVectorizer()
     vectorizer.fit(tex[i])

@@ -39,5 +39,7 @@ for category_id in data_category_id_by_product:
 
     matrix_Y = np.vstack([matrix_Y, add_array])
 matrix_Y = np.delete(matrix_Y, 0, axis=0)
+
+
 print(np.asarray(matrix_Y))
 np.savetxt("categories_matrix.csv", matrix_Y, delimiter=",")

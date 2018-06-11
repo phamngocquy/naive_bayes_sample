@@ -106,3 +106,7 @@ venv.bak/
 .mypy_cache/
 *.csv
 .idea/inspectionProfiles/
+*.pkl
+trained_variables.ckpt.index
+trained_variables.ckpt.data-00000-of-00001
+trained_variables.ckpt.meta
