@@ -110,3 +110,4 @@ venv.bak/
 trained_variables.ckpt.index
 trained_variables.ckpt.data-00000-of-00001
 trained_variables.ckpt.meta
+/summary_logs
