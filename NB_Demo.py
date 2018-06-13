@@ -68,7 +68,7 @@ def load_data(filepath, filepath_mlb):
 
 load_data("train_store.pkl", "mlb_data.pkl")
 
-sql = "SELECT * FROM products WHERE  category_id != 9999"
+sql = "SELECT * FROM products WHERE  is_active = true AND category_id != 9999"
 cursor.execute(sql)
 data = cursor.fetchall()
 
@@ -85,7 +85,7 @@ for i in range(0, len(tex)):
 
 new_mlb = MultiLabelBinarizer()
 v = new_mlb.fit_transform(tex)
-
+print(new_mlb.classes_)
 # data2
 s1 = []
 for (row) in data:

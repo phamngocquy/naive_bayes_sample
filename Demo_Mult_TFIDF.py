@@ -15,7 +15,7 @@ config = {
 cnx = mysql.connector.connect(**config)
 cursor = cnx.cursor(buffered=True)
 
-sql = "SELECT * FROM products where category_id != 9999"
+sql = "SELECT * FROM products where is_active = 1 AND category_id != 9999"
 cursor.execute(sql)
 data = cursor.fetchall()
 
@@ -38,7 +38,9 @@ print(type(s1))
 model = make_pipeline(TfidfVectorizer(), MultinomialNB())
 model.fit(tex, s1)
 print("training complete")
+
 while True:
+    print("Enter something: ")
     tmp = input()
     pred = model.predict([tmp])
     cursor.execute("SELECT name FROM categories WHERE  id = " + str(pred[0]))

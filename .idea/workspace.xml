@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9962b97f-2879-4b66-8ebe-b7e701c73a55" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Categories_Class_Predict.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Demo_Mult_TFIDF.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NB_Demo2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tensorflow/TextClassification.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/haku.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/haku.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Categories_Class_Predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/Categories_Class_Predict.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Categories_Classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/Categories_Classification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo_Mult_TFIDF.py" beforeDir="false" afterPath="$PROJECT_DIR$/Demo_Mult_TFIDF.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NB_Demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/NB_Demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/GenCategoryData.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/GenCategoryData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NB_Demo2.py" beforeDir="false" afterPath="$PROJECT_DIR$/NB_Demo2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/DemoOnce.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/DemoOnce.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,16 +22,18 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/DemoOnce$GenCategoryData.coverage" NAME="GenCategoryData Coverage Results" MODIFIED="1528780762763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/DemoOnce$GenProductData.coverage" NAME="GenProductData Coverage Results" MODIFIED="1528701543746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
-    <SUITE FILE_PATH="coverage/DemoOnce$demo.coverage" NAME="demo Coverage Results" MODIFIED="1528797150181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/DemoOnce$DAO.coverage" NAME="NB_Demo Coverage Results" MODIFIED="1528685541850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DemoOnce$Unnamed.coverage" NAME="Demo_Mult_TFIDF Coverage Results" MODIFIED="1528861033193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DemoOnce$DemoOnce.coverage" NAME="DemoOnce Coverage Results" MODIFIED="1528635412156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DemoOnce$Categories_Class_Predict.coverage" NAME="Categories_Class_Predict Coverage Results" MODIFIED="1528859683639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DemoOnce$Demo2.coverage" NAME="Demo2 Coverage Results" MODIFIED="1528362897782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DemoOnce$Categories_Classification.coverage" NAME="Categories_Classification Coverage Results" MODIFIED="1528859232581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DemoOnce$NB_Demo.coverage" NAME="NB_Demo Coverage Results" MODIFIED="1528860565694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DemoOnce$Categories_Class_Predict.coverage" NAME="Categories_Class_Predict Coverage Results" MODIFIED="1528872060006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DemoOnce$Categories_Classification.coverage" NAME="Categories_Classification Coverage Results" MODIFIED="1528871577595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DemoOnce$GenData.coverage" NAME="GenCategoryData Coverage Results" MODIFIED="1528691540313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
-    <SUITE FILE_PATH="coverage/DemoOnce$NB_Demo2.coverage" NAME="NB_Demo2 Coverage Results" MODIFIED="1528860688802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DemoOnce$NB_Demo2.coverage" NAME="NB_Demo2 Coverage Results" MODIFIED="1528871310677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DemoOnce$demo.coverage" NAME="demo Coverage Results" MODIFIED="1528865524783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/DemoOnce$Unnamed.coverage" NAME="Demo_Mult_TFIDF Coverage Results" MODIFIED="1528871205114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DemoOnce$DemoOnce.coverage" NAME="DemoOnce Coverage Results" MODIFIED="1528635412156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DemoOnce$Demo2.coverage" NAME="Demo2 Coverage Results" MODIFIED="1528362897782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DemoOnce$TextClassification.coverage" NAME="TextClassification Coverage Results" MODIFIED="1528874931317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
+    <SUITE FILE_PATH="coverage/DemoOnce$NB_Demo.coverage" NAME="NB_Demo Coverage Results" MODIFIED="1528882219761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DemoOnce$Demo_Mult_TFIDF.coverage" NAME="Demo_Mult_TFIDF Coverage Results" MODIFIED="1528884493170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -49,35 +51,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NB_Demo.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NB_Demo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-874">
-              <caret line="6" selection-start-line="6" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NB_Demo2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NB_Demo2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="100" column="37" selection-start-line="100" selection-start-column="12" selection-end-line="100" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Demo_Mult_TFIDF.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Demo_Mult_TFIDF.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Demo_Mult_TFIDF.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
-              <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+              <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#47#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NB_Demo.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/NB_Demo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="661">
+              <caret line="95" column="22" lean-forward="true" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -97,10 +87,10 @@
       <find>global_variables_initializer</find>
       <find>correct_predictions_OP</find>
       <find>load_data</find>
-      <find>mlb</find>
       <find>1</find>
       <find>usb</find>
       <find>màn</find>
+      <find>mlb</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -117,11 +107,15 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/data/GenCategoryData.py" />
         <option value="$PROJECT_DIR$/test/Demo2.py" />
+        <option value="$PROJECT_DIR$/PipelineMultinomialNB/TextClassificationPredict.py" />
+        <option value="$PROJECT_DIR$/PipelineMultinomialNB/NaiveBayesModel.py" />
+        <option value="$PROJECT_DIR$/PipelineMultinomialNB/FeatureTransformer.py" />
         <option value="$PROJECT_DIR$/test/DemoOnce.py" />
-        <option value="$PROJECT_DIR$/Categories_Class_Predict.py" />
-        <option value="$PROJECT_DIR$/Categories_Classification.py" />
         <option value="$PROJECT_DIR$/NB_Demo.py" />
         <option value="$PROJECT_DIR$/NB_Demo2.py" />
+        <option value="$PROJECT_DIR$/Categories_Classification.py" />
+        <option value="$PROJECT_DIR$/Categories_Class_Predict.py" />
+        <option value="$PROJECT_DIR$/tensorflow/TextClassification.py" />
         <option value="$PROJECT_DIR$/Demo_Mult_TFIDF.py" />
       </list>
     </option>
@@ -136,7 +130,7 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1396" />
+    <option name="width" value="960" />
     <option name="height" value="1061" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -162,7 +156,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn/feature_extraction/text.py&#10;/home/haku/PycharmProjects/DemoOnce/venv/lib/python3.6/site-packages/numpy/lib/npyio.py" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Demo_Mult_TFIDF.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -316,6 +310,25 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="TextClassification" type="PythonConfigurationType" factoryName="Python">
+      <module name="DemoOnce" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tensorflow" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow/TextClassification.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="demo" type="PythonConfigurationType" factoryName="Python">
       <module name="DemoOnce" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -337,6 +350,7 @@
     </configuration>
     <list>
       <item itemvalue="Python.NB_Demo" />
+      <item itemvalue="Python.TextClassification" />
       <item itemvalue="Python.GenProductData" />
       <item itemvalue="Python.GenCategoryData" />
       <item itemvalue="Python.Categories_Classification" />
@@ -360,33 +374,60 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1115" height="1061" extended-state="6" />
+    <frame x="0" y="0" width="1548" height="1061" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.59133613" side_tool="true" weight="0.3" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32987553" />
-      <window_info active="true" anchor="bottom" x="1117" y="18" width="801" height="1041" id="Run" order="2" sideWeight="0.40866387" type="WINDOWED" visible="true" weight="0.37686938" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.20828906" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21515435" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32943678" />
+      <window_info active="true" anchor="bottom" x="1550" y="18" width="368" height="1041" id="Run" order="2" sideWeight="0.40866387" type="WINDOWED" visible="true" weight="0.37686938" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.20828906" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.12716378" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3290735" />
       <window_info anchor="right" id="SciView" order="4" weight="0.32973805" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49947807" weight="0.3985122" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" x="0" y="0" width="430" height="861" id="Documentation" order="5" side_tool="true" weight="0.18162839" />
+      <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.0040816325" />
-      <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32987553" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.1771348" />
+      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info active="true" anchor="bottom" x="1465" y="18" width="453" height="1041" id="Run" order="2" sideWeight="0.40866387" type="WINDOWED" visible="true" weight="0.37686938" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.0040816325" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32943678" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49947807" weight="0.3985122" />
+      <window_info anchor="right" x="0" y="0" width="430" height="861" id="Documentation" order="5" side_tool="true" weight="0.18162839" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3290735" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.20828906" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.59133613" side_tool="true" weight="0.3" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="4" weight="0.32973805" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32987553" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -419,41 +460,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/Demo2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/DemoOnce.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NB_Demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="11" lean-forward="true" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Demo2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/DemoOnce.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NB_Demo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -670,23 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Demo2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/DemoOnce.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="39" column="34" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn/pipeline.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
@@ -701,57 +690,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Categories_Classification.py">
+    <entry file="file://$PROJECT_DIR$/PipelineMultinomialNB/TextClassificationPredict.py" />
+    <entry file="file://$PROJECT_DIR$/PipelineMultinomialNB/FeatureTransformer.py" />
+    <entry file="file://$PROJECT_DIR$/PipelineMultinomialNB/NaiveBayesModel.py" />
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn/ensemble/forest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-214">
-          <caret line="226" column="26" lean-forward="true" selection-start-line="226" selection-start-column="26" selection-end-line="226" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Categories_Class_Predict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-435">
-          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NB_Demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-874">
-          <caret line="6" selection-start-line="6" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NB_Demo2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="100" column="37" selection-start-line="100" selection-start-column="12" selection-end-line="100" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="239">
+          <caret line="219" column="8" selection-start-line="219" selection-start-column="8" selection-end-line="219" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn/feature_extraction/text.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
-          <caret line="231" selection-start-line="231" selection-end-line="231" />
+          <caret line="957" column="8" selection-start-line="957" selection-start-column="8" selection-end-line="957" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Demo2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="593">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/DemoOnce.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="57" column="36" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NB_Demo2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="80" column="8" lean-forward="true" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Categories_Class_Predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1316">
+          <caret line="116" column="41" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Categories_Classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3604">
+          <caret line="212" column="30" selection-start-line="212" selection-start-column="19" selection-end-line="212" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow/TextClassification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="50" column="14" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Demo_Mult_TFIDF.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NB_Demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="95" column="22" lean-forward="true" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="22" />
         </state>
       </provider>
     </entry>

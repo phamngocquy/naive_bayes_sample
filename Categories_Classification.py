@@ -27,7 +27,7 @@ def load_train_category_data():
         idX.append(id_categories[0])
     matrix_Y = np.array([idX])
 
-    sql_get_category_id_by_product = "SELECT * FROM products WHERE category_id != 9999"
+    sql_get_category_id_by_product = "SELECT * FROM products WHERE category_id != 9999 AND is_active = 1"
     cursor.execute(sql_get_category_id_by_product)
     data_category_id_by_product = cursor.fetchall()
 
@@ -44,10 +44,9 @@ def load_train_category_data():
 
 
 def loading_train_product_data():
-    sql = "SELECT * FROM products WHERE category_id != 9999 "
+    sql = "SELECT * FROM products WHERE category_id != 9999 AND is_active = 1"
     cursor.execute(sql)
     data = cursor.fetchall()
-
     # data_1
     tex = []
     for row in data:
@@ -58,16 +57,6 @@ def loading_train_product_data():
     v = tmp.toarray()
     print(v)
     return v, vectorizer.get_feature_names()
-    # for i_ in range(0, len(tex)):
-    #     vectorizer = CountVectorizer()
-    #     vectorizer.fit(tex[i_])
-    #     tex[i_] = vectorizer.get_feature_names()
-    #
-    # mlb = MultiLabelBinarizer()
-    # v = mlb.fit_transform(tex)
-    # print(v)
-    # print(mlb.classes_)
-    # return v, mlb.classes_
 
 
 trainX_Product, mblClasse_ = loading_train_product_data()
@@ -250,48 +239,7 @@ saver.save(sess, "/home/haku/PycharmProjects/DemoOnce/trained_variables.ckpt")
 
 print("train complete")
 
-# while True:
-#     s = input("Enter something: ")
-#     input_ = [s]
-#     vectorizer_ = CountVectorizer()
-#     vectorizer_.fit(input_)
-#     list_input = list(vectorizer_.vocabulary_.keys())
-#
-#     result_array = []
-#     check_correct = 0
-#     for i in range(0, len(mblClasse_)):
-#         for j in range(0, len(list_input)):
-#             if mblClasse_[i] == list_input[j]:
-#                 result_array.append(1)
-#                 check_correct = 1
-#                 print("index: " + str(i + 1))
-#                 print("true: " + mblClasse_[i])
-#                 break
-#         if check_correct == 0:
-#             result_array.append(0)
-#         else:
-#             check_correct = 0
-#
-#     testX = np.array([result_array])
-#     print(testX)
-#     prediction = sess.run([activation_OP], feed_dict={X: testX})
-#
-#     print("result: ")
-#     print(correct_Data_Category[np.argmax(prediction[0])])
-
-# How well do we perform on held-out test data?
-
-
-############################
-### MAKE NEW PREDICTIONS ###
-############################
 
 # Close tensorflow session
 sess.close()
-
-# To view tensorboard:
-# 1. run: tensorboard --logdir=/path/to/log-directory
-# 2. open your browser to http://localhost:6006/
-# See tutorial here for graph visualization:
-# https://www.tensorflow.org/versions/0.6.0/how_tos/graph_viz/index.html
 cnx.close()

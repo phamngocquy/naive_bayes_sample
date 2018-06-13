@@ -73,14 +73,13 @@ def load_data(filepath, filepath_mlb):
 
 load_data("train_store_2.pkl", "mlb_data_2.pkl")
 
-sql = "SELECT * FROM products where category_id != 9999"
+sql = "SELECT * FROM products where is_active = 1 AND category_id != 9999"
 cursor.execute(sql)
 data = cursor.fetchall()
 
 print("loading data..")
-# data_1z
+# data_1
 tex = []
-
 for row in data:
     tex.append(row[3])
     tex.append(unidecode(row[3]))

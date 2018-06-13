@@ -24,7 +24,7 @@ def load_train_category_data():
     for id_categories in data:
         idX.append(id_categories[0])
     matrix_Y = np.array([idX])
-    sql_get_category_id_by_product = "SELECT * FROM products WHERE  category_id != 9999"
+    sql_get_category_id_by_product = "SELECT * FROM products WHERE  category_id != 9999 AND is_active = 1"
     cursor.execute(sql_get_category_id_by_product)
     data_category_id_by_product = cursor.fetchall()
 
@@ -42,7 +42,7 @@ def load_train_category_data():
 
 
 def loading_train_product_data():
-    sql = "SELECT * FROM products WHERE  category_id != 9999 "
+    sql = "SELECT * FROM products WHERE  category_id != 9999 AND is_active = 1 "
     cursor.execute(sql)
     data = cursor.fetchall()
 
@@ -112,13 +112,16 @@ while True:
     testX = np.array(result_array)
     print(testX)
     tensor_prediction = sess.run(activation_OP, feed_dict={X: testX.reshape(1, len(testX))})
-    print(tensor_prediction)
-    print("result: ")
-
-    for i in range(0, len(tensor_prediction[0])):
-        if tensor_prediction[0][i] == max(tensor_prediction[0]):
-            print(i)
-            print(tensor_prediction[0][i])
-            print(correct_Data_Category[i][6])
+    result = np.argmax(tensor_prediction[0])
+    print("index: " + str(result))
+    print(correct_Data_Category[result][6])
+    # print(tensor_prediction)
+    # print("result: ")
+    #
+    # for i in range(0, len(tensor_prediction[0])):
+    #     if tensor_prediction[0][i] == max(tensor_prediction[0]):
+    #         print(i)
+    #         print(tensor_prediction[0][i])
+    #         print(correct_Data_Category[i][6])
 
     cnx.close()
