@@ -5,7 +5,11 @@ import mysql.connector
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import GaussianNB
-from sklearn.preprocessing import MultiLabelBinarizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.naive_bayes import BernoulliNB
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.pipeline import make_pipeline
+
 from unidecode import unidecode
 
 config = {
@@ -25,19 +29,20 @@ def predict_word(clf, mlb):
             s = input("Enter something: ")
             input_ = [s]
             vectorizer_ = CountVectorizer()
-            vectorizer_.fit(input_)
-            list_input = list(vectorizer_.vocabulary_.keys())
+            vectorizer_.fit_transform(input_)
+            list_input = vectorizer_.get_feature_names()
+            print(mlb)
             result_array = []
             check_correct = 0
             count_true = 0
-            for i in range(0, len(mlb.classes_)):
+            for i in range(0, len(mlb)):
                 for j in range(0, len(list_input)):
-                    if mlb.classes_[i] == list_input[j]:
+                    if mlb[i] == list_input[j]:
                         result_array.append(1)
                         check_correct = 1
                         count_true = count_true + 1
                         print("index: " + str(i + 1))
-                        print("true: " + mlb.classes_[i])
+                        print("true: " + mlb[i])
                         break
                 if check_correct == 0:
                     result_array.append(0)
@@ -66,25 +71,21 @@ def load_data(filepath, filepath_mlb):
         print("file not found")
 
 
-load_data("train_store.pkl", "mlb_data.pkl")
+load_data("train_store_2.pkl", "mlb_data_2.pkl")
 
-sql = "SELECT * FROM products WHERE  category_id != 9999"
+sql = "SELECT * FROM products where category_id != 9999"
 cursor.execute(sql)
 data = cursor.fetchall()
 
 print("loading data..")
-# data_1
+# data_1z
 tex = []
-for row in data:
-    tex.append([row[3]])
-    tex.append([unidecode(row[3])])
-for i in range(0, len(tex)):
-    vectorizer = CountVectorizer()
-    vectorizer.fit(tex[i])
-    tex[i] = vectorizer.get_feature_names()
 
-new_mlb = MultiLabelBinarizer()
-v = new_mlb.fit_transform(tex)
+for row in data:
+    tex.append(row[3])
+    tex.append(unidecode(row[3]))
+vectorizer = CountVectorizer()
+v = vectorizer.fit_transform(tex)
 
 # data2
 s1 = []
@@ -93,11 +94,13 @@ for (row) in data:
     s1.append(row[12])
 
 print("training...")
-new_clf = GaussianNB()
-new_clf.fit(v, np.array(s1))
-# pickle.dump(new_clf, open("train_store.pkl", 'wb'))
-# pickle.dump(new_mlb, open("mlb_data.pkl", 'wb'))
-predict_word(new_clf, new_mlb)
+# model = make_pipeline(TfidfVectorizer, MultinomialNB())
+# model.fit(v.toarray(), np.array(s1))
+# labels = model.predict("ban di chuot")
+new_clf = MultinomialNB()
+new_clf.fit(v.toarray(), np.array(s1))
 print("training complete")
-
+# pickle.dump(new_clf, open("train_store_2.pkl", 'wb'))
+# pickle.dump(vectorizer.get_feature_names(), open("mlb_data_2.pkl", 'wb'))
+predict_word(new_clf, vectorizer.get_feature_names())
 cnx.close()

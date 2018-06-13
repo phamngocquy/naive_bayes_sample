@@ -26,11 +26,14 @@ for id_categories in data:
     idX.append(id_categories[0])
 matrix_Y = np.array([idX])
 
+print(matrix_Y)
+
 sql_get_category_id_by_product = "SELECT category_id FROM products LIMIT 1000 "
 cursor.execute(sql_get_category_id_by_product)
 data_category_id_by_product = cursor.fetchall()
 for category_id in data_category_id_by_product:
     add_array = []
+    print(category_id)
     for i in range(0, len(idX)):
         if category_id[0] == idX[i]:
             add_array.append(1)
@@ -39,7 +42,6 @@ for category_id in data_category_id_by_product:
 
     matrix_Y = np.vstack([matrix_Y, add_array])
 matrix_Y = np.delete(matrix_Y, 0, axis=0)
-
 
 print(np.asarray(matrix_Y))
 np.savetxt("categories_matrix.csv", matrix_Y, delimiter=",")

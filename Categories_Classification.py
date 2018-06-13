@@ -1,13 +1,11 @@
 from __future__ import division
-import tensorflow as tf
-import numpy as np
-import tarfile
-import os
+
 import matplotlib.pyplot as plt
-import time
-from sklearn.preprocessing import MultiLabelBinarizer
 import mysql.connector
+import numpy as np
+import tensorflow as tf
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.preprocessing import MultiLabelBinarizer
 
 config = {
     'user': 'root',
@@ -21,7 +19,7 @@ cursor = cnx.cursor(buffered=True)
 
 
 def load_train_category_data():
-    sql = "SELECT  id,name FROM categories"
+    sql = "SELECT * FROM categories"
     cursor.execute(sql)
     data = cursor.fetchall()
     idX = []
@@ -29,51 +27,63 @@ def load_train_category_data():
         idX.append(id_categories[0])
     matrix_Y = np.array([idX])
 
-    sql_get_category_id_by_product = "SELECT category_id FROM products LIMIT 1000 "
+    sql_get_category_id_by_product = "SELECT * FROM products WHERE category_id != 9999"
     cursor.execute(sql_get_category_id_by_product)
     data_category_id_by_product = cursor.fetchall()
+
     for category_id in data_category_id_by_product:
         add_array = []
-        for i in range(0, len(idX)):
-            if category_id[0] == idX[i]:
+        for i_ in range(0, len(idX)):
+            if category_id[12] == idX[i_]:
                 add_array.append(1)
             else:
                 add_array.append(0)
-
         matrix_Y = np.vstack([matrix_Y, add_array])
     matrix_Y = np.delete(matrix_Y, 0, axis=0)
     return matrix_Y, data
 
 
 def loading_train_product_data():
-    sql = "SELECT * FROM products LIMIT 1000"
+    sql = "SELECT * FROM products WHERE category_id != 9999 "
     cursor.execute(sql)
     data = cursor.fetchall()
 
     # data_1
-    # tex = [[row[3]] for row in data]
     tex = []
     for row in data:
-        tex.append([row[3]])
-    for i_ in range(0, len(tex)):
-        vectorizer = CountVectorizer()
-        vectorizer.fit(tex[i_])
-        tex[i_] = vectorizer.get_feature_names()
+        tex.append(row[3])
 
-    mlb = MultiLabelBinarizer()
-    v = mlb.fit_transform(tex)
-    return v, mlb.classes_
+    vectorizer = CountVectorizer()
+    tmp = vectorizer.fit_transform(tex)
+    v = tmp.toarray()
+    print(v)
+    return v, vectorizer.get_feature_names()
+    # for i_ in range(0, len(tex)):
+    #     vectorizer = CountVectorizer()
+    #     vectorizer.fit(tex[i_])
+    #     tex[i_] = vectorizer.get_feature_names()
+    #
+    # mlb = MultiLabelBinarizer()
+    # v = mlb.fit_transform(tex)
+    # print(v)
+    # print(mlb.classes_)
+    # return v, mlb.classes_
 
 
 trainX_Product, mblClasse_ = loading_train_product_data()
 trainY_Category, correct_Data_Category = load_train_category_data()
 
 # GLOBAL PARAMETERS
+
+print(trainX_Product.shape)
+print(trainY_Category.shape)
+
 numFeatures = trainX_Product.shape[1]
 numLabels = trainY_Category.shape[1]
-# print(numFeatures)
-# print(numLabels)
-numEpochs = 2000
+
+print(numFeatures)
+print(numLabels)
+numEpochs = 200
 learningRate = tf.train.exponential_decay(learning_rate=0.0008,
                                           global_step=1,
                                           decay_steps=trainX_Product.shape[0],
@@ -82,8 +92,8 @@ learningRate = tf.train.exponential_decay(learning_rate=0.0008,
 
 X = tf.placeholder(tf.float32, [None, numFeatures])
 yGold = tf.placeholder(tf.float32, [None, numLabels])
-# print(X)
-# print(yGold)
+print(X)
+print(yGold)
 # VARIABLES
 
 weights = tf.Variable(tf.random_normal([numFeatures, numLabels],
@@ -165,16 +175,22 @@ correct_predictions_OP = tf.equal(tf.argmax(activation_OP, 1), tf.argmax(yGold, 
 
 accuracy_OP = tf.reduce_mean(tf.cast(correct_predictions_OP, "float"))
 # Summary op for regression output
+
 activation_summary_OP = tf.summary.histogram("output", activation_OP)
+
 # Summary op for accuracy
 accuracy_summary_OP = tf.summary.scalar("accuracy", accuracy_OP)
+
 # Summary op for cost
 cost_summary_OP = tf.summary.scalar("cost", cost_OP)
+
 # Summary ops to check how variables (W, b) are updating after each iteration
 weightSummary = tf.summary.histogram("weights", weights.eval(session=sess))
 biasSummary = tf.summary.histogram("biases", bias.eval(session=sess))
+
 # Merge all summaries
 all_summary_OPS = tf.summary.merge_all()
+
 # Summary writer
 writer = tf.summary.FileWriter("summary_logs", sess.graph)
 
@@ -220,9 +236,9 @@ for i in range(numEpochs):
             costLine, = ax2.plot(epoch_values, cost_values)
             fig.canvas.draw()
 
-print("final accuracy on test set: %s" % str(sess.run(accuracy_OP,
-                                                      feed_dict={X: trainX_Product,
-                                                                 yGold: trainY_Category})))
+# print("final accuracy on test set: %s" % str(sess.run([accuracy_OP],
+#                                                       feed_dict={X: trainX_Product,
+#                                                                  yGold: trainY_Category})))
 ##############################
 ### SAVE TRAINED VARIABLES ###
 ##############################
@@ -234,33 +250,34 @@ saver.save(sess, "/home/haku/PycharmProjects/DemoOnce/trained_variables.ckpt")
 
 print("train complete")
 
-while True:
-    s = input("Enter something: ")
-    input_ = [s]
-    vectorizer_ = CountVectorizer()
-    vectorizer_.fit(input_)
-    list_input = list(vectorizer_.vocabulary_.keys())
-
-    result_array = []
-    check_correct = 0
-    for i in range(0, len(mblClasse_)):
-        for j in range(0, len(list_input)):
-            if mblClasse_[i] == list_input[j]:
-                result_array.append(1)
-                check_correct = 1
-                print("index: " + str(i + 1))
-                print("true: " + mblClasse_[i])
-                break
-        if check_correct == 0:
-            result_array.append(0)
-        else:
-            check_correct = 0
-
-    testX = np.array([result_array])
-    prediction = sess.run(activation_OP, feed_dict={X: testX})
-
-    print("result: ")
-    print(correct_Data_Category[np.argmax(prediction[0])])
+# while True:
+#     s = input("Enter something: ")
+#     input_ = [s]
+#     vectorizer_ = CountVectorizer()
+#     vectorizer_.fit(input_)
+#     list_input = list(vectorizer_.vocabulary_.keys())
+#
+#     result_array = []
+#     check_correct = 0
+#     for i in range(0, len(mblClasse_)):
+#         for j in range(0, len(list_input)):
+#             if mblClasse_[i] == list_input[j]:
+#                 result_array.append(1)
+#                 check_correct = 1
+#                 print("index: " + str(i + 1))
+#                 print("true: " + mblClasse_[i])
+#                 break
+#         if check_correct == 0:
+#             result_array.append(0)
+#         else:
+#             check_correct = 0
+#
+#     testX = np.array([result_array])
+#     print(testX)
+#     prediction = sess.run([activation_OP], feed_dict={X: testX})
+#
+#     print("result: ")
+#     print(correct_Data_Category[np.argmax(prediction[0])])
 
 # How well do we perform on held-out test data?
 
