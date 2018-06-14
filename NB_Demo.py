@@ -7,6 +7,9 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import MultiLabelBinarizer
 from unidecode import unidecode
+from sklearn.naive_bayes import BernoulliNB
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 
 config = {
     'user': 'root',
@@ -68,7 +71,7 @@ def load_data(filepath, filepath_mlb):
 
 load_data("train_store.pkl", "mlb_data.pkl")
 
-sql = "SELECT * FROM products WHERE  is_active = true AND category_id != 9999"
+sql = "SELECT * FROM products WHERE is_active = 1 AND category_id != 9999"
 cursor.execute(sql)
 data = cursor.fetchall()
 
@@ -85,16 +88,19 @@ for i in range(0, len(tex)):
 
 new_mlb = MultiLabelBinarizer()
 v = new_mlb.fit_transform(tex)
-print(new_mlb.classes_)
 # data2
 s1 = []
 for (row) in data:
     s1.append(row[12])
     s1.append(row[12])
 
+train_X, test_X, train_Y, test_Y = train_test_split(v, np.array(s1), test_size=0.3, random_state=1)
+
 print("training...")
 new_clf = GaussianNB()
-new_clf.fit(v, np.array(s1))
+new_clf.fit(train_X, train_Y)
+pre = new_clf.predict(test_X)
+print(accuracy_score(test_Y, pre))
 # pickle.dump(new_clf, open("train_store.pkl", 'wb'))
 # pickle.dump(new_mlb, open("mlb_data.pkl", 'wb'))
 predict_word(new_clf, new_mlb)

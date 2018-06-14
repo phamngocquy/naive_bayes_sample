@@ -4,6 +4,8 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import make_pipeline
 import mysql.connector
 from unidecode import unidecode
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
 
 config = {
     'user': 'root',
@@ -26,17 +28,18 @@ for row in data:
     tex.append(row[3])
     tex.append(unidecode(row[3]))
 
-print(type(tex))
 # data2
 s1 = []
 for (row) in data:
     s1.append(row[12])
     s1.append(row[12])
 
-print(type(s1))
+train_X, test_X, train_Y, test_Y = train_test_split(tex, s1, test_size=0.2, random_state=1)
 
 model = make_pipeline(TfidfVectorizer(), MultinomialNB())
-model.fit(tex, s1)
+model.fit(train_X, train_Y)
+pre = model.predict(test_X)
+print(accuracy_score(test_Y, pre))
 print("training complete")
 
 while True:

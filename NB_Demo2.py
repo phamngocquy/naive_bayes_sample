@@ -4,13 +4,10 @@ from pathlib import Path
 import mysql.connector
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.naive_bayes import GaussianNB
+from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
-from sklearn.naive_bayes import BernoulliNB
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.pipeline import make_pipeline
-
 from unidecode import unidecode
+from sklearn.metrics import accuracy_score
 
 config = {
     'user': 'root',
@@ -73,7 +70,7 @@ def load_data(filepath, filepath_mlb):
 
 load_data("train_store_2.pkl", "mlb_data_2.pkl")
 
-sql = "SELECT * FROM products where is_active = 1 AND category_id != 9999"
+sql = "SELECT * FROM products  WHERE is_active = 1 AND category_id != 9999"
 cursor.execute(sql)
 data = cursor.fetchall()
 
@@ -93,11 +90,11 @@ for (row) in data:
     s1.append(row[12])
 
 print("training...")
-# model = make_pipeline(TfidfVectorizer, MultinomialNB())
-# model.fit(v.toarray(), np.array(s1))
-# labels = model.predict("ban di chuot")
+train_X, test_X, train_Y, test_Y = train_test_split(v, np.array(s1), test_size=0.2, random_state=1)
 new_clf = MultinomialNB()
-new_clf.fit(v.toarray(), np.array(s1))
+new_clf.fit(train_X, train_Y)
+pre = new_clf.predict(test_X)
+print(accuracy_score(test_Y, pre))
 print("training complete")
 # pickle.dump(new_clf, open("train_store_2.pkl", 'wb'))
 # pickle.dump(vectorizer.get_feature_names(), open("mlb_data_2.pkl", 'wb'))
