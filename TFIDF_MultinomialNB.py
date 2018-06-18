@@ -9,7 +9,6 @@ from sklearn.pipeline import make_pipeline
 def processor():
     df = pd.read_csv("data/products.csv")
     train_X, test_X, train_Y, test_Y = train_test_split(df["name"], df["category"], test_size=0.2, random_state=1)
-    print(train_X)
     model = make_pipeline(TfidfVectorizer(), MultinomialNB())
     model.fit(train_X, train_Y)
     pre = model.predict(test_X)

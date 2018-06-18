@@ -19,7 +19,7 @@ def load_data():
     cursor = cnx.cursor(buffered=True)
     cursor.execute("select products.name,categories.name as category,category_id from products "
                    "inner join categories on products.category_id = categories.id "
-                   "where products.category_id != 9999 and products.is_active = 1")
+                   "where products.category_id != 9999 AND products.is_active = True")
     data = cursor.fetchall()
     name_product_list_df = []
     for row in data:

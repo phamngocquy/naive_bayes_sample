@@ -59,17 +59,12 @@ def predict_word(clf, mlb):
                 else:
                     check_correct = 0
             if count_true > 0:
-                result_id = clf.predict_proba([result_array])
-                result_id_ = clf.predict([result_array])
-                # print(clf.classes_)
-                # print(result_id_)
+                result_id_ = clf.predict_proba([result_array])
+                result_id = clf.predict([result_array])
 
-                df = pd.DataFrame(clf.predict_proba([result_array]), columns=clf.classes_)
-                df.to_csv("result.csv", sep='\t')
-                print(df)
-                # cursor.execute("SELECT name FROM categories WHERE  id = " + str(result_id[0]))
-                # final_data = cursor.fetchall()
-                # print(final_data)
+                cursor.execute("SELECT name FROM categories WHERE  id = " + str(result_id[0]))
+                final_data = cursor.fetchall()
+                print(final_data)
             else:
                 print("haven't the correct word")
         except ValueError:
