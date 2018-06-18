@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9962b97f-2879-4b66-8ebe-b7e701c73a55" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Multinomial_NB.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/GenDataForNB.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TFIDF_MultinomialNB.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TreeDecision.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/knearestneighbors/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/haku.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/haku.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo_Mult_TFIDF.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/NB_Demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/NB_Demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NB_Demo2.py" beforeDir="false" afterPath="$PROJECT_DIR$/NB_Demo2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/GenDataForNB.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/GenDataForNB.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,7 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DemoOnce$GenCategoryData.coverage" NAME="GenCategoryData Coverage Results" MODIFIED="1528780762763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/DemoOnce$GenCategoryData.coverage" NAME="GenCategoryData Coverage Results" MODIFIED="1529294703286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/DemoOnce$GenProductData.coverage" NAME="GenProductData Coverage Results" MODIFIED="1528701543746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/DemoOnce$DAO.coverage" NAME="NB_Demo Coverage Results" MODIFIED="1528685541850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DemoOnce$Multinomial_NB.coverage" NAME="Multinomial_NB Coverage Results" MODIFIED="1528950083425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -26,15 +27,17 @@
     <SUITE FILE_PATH="coverage/DemoOnce$Categories_Class_Predict.coverage" NAME="Categories_Class_Predict Coverage Results" MODIFIED="1528945059809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DemoOnce$Categories_Classification.coverage" NAME="Categories_Classification Coverage Results" MODIFIED="1528871577595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DemoOnce$GenData.coverage" NAME="GenCategoryData Coverage Results" MODIFIED="1528691540313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
-    <SUITE FILE_PATH="coverage/DemoOnce$NB_Demo2.coverage" NAME="NB_Demo2 Coverage Results" MODIFIED="1528949466090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DemoOnce$GenDataForNB.coverage" NAME="GenDataForNB Coverage Results" MODIFIED="1528949906049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/DemoOnce$NB_Demo2.coverage" NAME="NB_Demo2 Coverage Results" MODIFIED="1528967060844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DemoOnce$GenDataForNB.coverage" NAME="GenDataForNB Coverage Results" MODIFIED="1529304180612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/DemoOnce$TreeDecision.coverage" NAME="TreeDecision Coverage Results" MODIFIED="1529304191836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DemoOnce$demo.coverage" NAME="demo Coverage Results" MODIFIED="1528865524783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/DemoOnce$Unnamed.coverage" NAME="Demo_Mult_TFIDF Coverage Results" MODIFIED="1528871205114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DemoOnce$DemoOnce.coverage" NAME="DemoOnce Coverage Results" MODIFIED="1528635412156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DemoOnce$Demo2.coverage" NAME="Demo2 Coverage Results" MODIFIED="1528362897782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DemoOnce$TextClassification.coverage" NAME="TextClassification Coverage Results" MODIFIED="1528874931317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
-    <SUITE FILE_PATH="coverage/DemoOnce$NB_Demo.coverage" NAME="NB_Demo Coverage Results" MODIFIED="1528951471664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DemoOnce$Demo_Mult_TFIDF.coverage" NAME="Demo_Mult_TFIDF Coverage Results" MODIFIED="1528951468081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DemoOnce$NB_Demo.coverage" NAME="NB_Demo Coverage Results" MODIFIED="1529288515908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DemoOnce$main.coverage" NAME="main Coverage Results" MODIFIED="1529309983850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/knearestneighbors" />
+    <SUITE FILE_PATH="coverage/DemoOnce$Demo_Mult_TFIDF.coverage" NAME="Demo_Mult_TFIDF Coverage Results" MODIFIED="1529296079238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -52,35 +55,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Demo_Mult_TFIDF.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Demo_Mult_TFIDF.py">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/knearestneighbors/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#47#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Multinomial_NB.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Multinomial_NB.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NB_Demo2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NB_Demo2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="95" column="21" selection-start-line="95" selection-start-column="10" selection-end-line="95" selection-end-column="21" />
+            <state relative-caret-position="-1941">
+              <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -88,26 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GenDataForNB.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/GenDataForNB.py">
+      <file leaf-file-name="_core.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/pandas/plotting/_core.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NB_Demo.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/NB_Demo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="89" column="30" lean-forward="true" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="5661">
+              <caret line="372" selection-start-line="372" selection-end-line="372" />
             </state>
           </provider>
         </entry>
@@ -133,6 +97,8 @@
       <find>mlb</find>
       <find>RAM</find>
       <find>R</find>
+      <find>elcom</find>
+      <find>size</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -156,12 +122,14 @@
         <option value="$PROJECT_DIR$/Categories_Classification.py" />
         <option value="$PROJECT_DIR$/Categories_Class_Predict.py" />
         <option value="$PROJECT_DIR$/tensorflow/TextClassification.py" />
-        <option value="$PROJECT_DIR$/Demo_Mult_TFIDF.py" />
         <option value="$PROJECT_DIR$/test/test.py" />
-        <option value="$PROJECT_DIR$/data/GenDataForNB.py" />
-        <option value="$PROJECT_DIR$/NB_Demo2.py" />
         <option value="$PROJECT_DIR$/Multinomial_NB.py" />
+        <option value="$PROJECT_DIR$/NB_Demo2.py" />
         <option value="$PROJECT_DIR$/NB_Demo.py" />
+        <option value="$PROJECT_DIR$/Demo_Mult_TFIDF.py" />
+        <option value="$PROJECT_DIR$/TreeDecision.py" />
+        <option value="$PROJECT_DIR$/data/GenDataForNB.py" />
+        <option value="$PROJECT_DIR$/knearestneighbors/main.py" />
       </list>
     </option>
   </component>
@@ -184,6 +152,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -194,22 +163,24 @@
             <path>
               <item name="DemoOnce" type="b2602c69:ProjectViewProjectNode" />
               <item name="DemoOnce" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="knearestneighbors" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn/feature_extraction/text.py&#10;/home/haku/PycharmProjects/DemoOnce/venv/lib/python3.6/site-packages/numpy/lib/npyio.py" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/result.csv&#10;/home/haku/PycharmProjects/DemoOnce/venv/lib/python3.6/site-packages/sklearn/feature_extraction/text.py&#10;/home/haku/PycharmProjects/DemoOnce/venv/lib/python3.6/site-packages/numpy/lib/npyio.py" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../machinelearning_codetudau/text_classification_example" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="OPEN_URL_DIALOG">
+      <recent name="https://github.com/tiepvupsu/tiepvupsu.github.io/blob/master/assets/pla/perceptron.py" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/test" />
     </key>
@@ -226,7 +197,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.NB_Demo">
+  <component name="RunManager" selected="Python.main">
     <configuration name="Categories_Class_Predict" type="PythonConfigurationType" factoryName="Python">
       <module name="DemoOnce" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -260,25 +231,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Categories_Classification.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="Demo_Mult_TFIDF" type="PythonConfigurationType" factoryName="Python">
-      <module name="DemoOnce" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Demo_Mult_TFIDF.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -417,6 +369,25 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="TreeDecision" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DemoOnce" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TreeDecision.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="demo" type="PythonConfigurationType" factoryName="Python">
       <module name="DemoOnce" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -431,6 +402,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/DemoOnce.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DemoOnce" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/knearestneighbors" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/knearestneighbors/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -464,15 +454,18 @@
       <item itemvalue="Python.demo" />
       <item itemvalue="Python.Categories_Class_Predict" />
       <item itemvalue="Python.NB_Demo2" />
-      <item itemvalue="Python.Demo_Mult_TFIDF" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.GenDataForNB" />
       <item itemvalue="Python.Multinomial_NB" />
+      <item itemvalue="Python.TreeDecision" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Multinomial_NB" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.TreeDecision" />
         <item itemvalue="Python.GenDataForNB" />
+        <item itemvalue="Python.Multinomial_NB" />
         <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
@@ -491,24 +484,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1382" height="1061" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1920" height="1061" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.59133613" side_tool="true" weight="0.3" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" x="1384" y="18" width="534" height="1041" id="Run" order="2" sideWeight="0.40866387" type="WINDOWED" visible="true" weight="0.37686938" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32943678" />
+      <window_info active="true" anchor="bottom" x="612" y="403" width="908" height="207" id="Run" order="2" sideWeight="0.40866387" visible="true" weight="0.26354942" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.20828906" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.2238024" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.16061899" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32870865" />
-      <window_info anchor="right" id="SciView" order="4" weight="0.4421265" />
+      <window_info anchor="right" id="SciView" order="4" weight="0.18849841" />
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32943678" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49947807" weight="0.3985122" />
       <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49947807" weight="0.39744952" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -517,33 +508,34 @@
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.0040816325" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.0031880978" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32943678" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="1" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.1771348" />
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info active="true" anchor="bottom" x="1465" y="18" width="453" height="1041" id="Run" order="2" sideWeight="0.40866387" type="WINDOWED" visible="true" weight="0.37686938" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.0040816325" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32943678" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49947807" weight="0.3985122" />
       <window_info anchor="right" x="0" y="0" width="430" height="861" id="Documentation" order="5" side_tool="true" weight="0.18162839" />
       <window_info anchor="right" id="Database" order="3" weight="0.3290735" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.20828906" />
       <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.59133613" side_tool="true" weight="0.3" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="SciView" order="4" weight="0.32973805" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.0040816325" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32987553" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32943678" />
+      <window_info id="Favorites" order="1" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +546,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -577,55 +569,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/DemoOnce.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Demo2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NB_Demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Demo2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/DemoOnce.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NB_Demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Demo2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/DemoOnce.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -685,13 +628,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/products_.csv" />
     <entry file="file://$PROJECT_DIR$/foo.csv" />
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/mysql/connector/connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="1062" selection-start-line="1062" selection-end-line="1062" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/mysql/connector/cursor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -751,13 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/GenCategoryData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/sklearn/naive_bayes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -796,13 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Categories_Class_Predict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1316">
-          <caret line="116" column="41" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Categories_Classification.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3604">
@@ -835,9 +757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
-          <folding>
-            <element signature="e#40#105#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -848,50 +767,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NB_Demo2.py">
+    <entry file="file://$PROJECT_DIR$/data/GenCategoryData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="95" column="21" selection-start-line="95" selection-start-column="10" selection-end-line="95" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="629">
+          <caret line="46" column="44" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="https://github.com/tiepvupsu/tiepvupsu.github.io/blob/master/assets/pla/perceptron.py">
+      <provider selected="true" editor-type-id="httpFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Categories_Class_Predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="116" column="41" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/mysql/connector/connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="395" selection-start-line="395" selection-end-line="395" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Multinomial_NB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TFIDF_MultinomialNB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="58" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="58" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/NB_Demo2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1174">
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/pandas/plotting/_core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5661">
+          <caret line="372" selection-start-line="372" selection-end-line="372" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/products.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-33485" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knearestneighbors/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/data/GenDataForNB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+        <state relative-caret-position="272">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="16" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Demo_Mult_TFIDF.py">
+    <entry file="file://$PROJECT_DIR$/TreeDecision.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        <state relative-caret-position="153">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="41" />
           <folding>
-            <element signature="e#0#47#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NB_Demo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="89" column="30" lean-forward="true" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="30" />
+        <state relative-caret-position="204">
+          <caret line="18" column="35" selection-end-line="174" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knearestneighbors/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1941">
+          <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

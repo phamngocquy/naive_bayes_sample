@@ -1,6 +1,6 @@
 import pickle
 from pathlib import Path
-
+from sklearn.neighbors import KNeighborsClassifier
 import mysql.connector
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
@@ -59,17 +59,10 @@ def predict_word(clf, mlb):
                 else:
                     check_correct = 0
             if count_true > 0:
-                result_id = clf.predict_proba([result_array])
-                result_id_ = clf.predict([result_array])
-                # print(clf.classes_)
-                # print(result_id_)
-
-                df = pd.DataFrame(clf.predict_proba([result_array]), columns=clf.classes_)
-                df.to_csv("result.csv", sep='\t')
-                print(df)
-                # cursor.execute("SELECT name FROM categories WHERE  id = " + str(result_id[0]))
-                # final_data = cursor.fetchall()
-                # print(final_data)
+                result_id = clf.predict([result_array])
+                cursor.execute("SELECT name FROM categories WHERE  id = " + str(result_id[0]))
+                final_data = cursor.fetchall()
+                print(final_data)
             else:
                 print("haven't the correct word")
         except ValueError:
@@ -90,8 +83,8 @@ def convert_input(name, mlb):
                 result_array.append(1)
                 check_correct = 1
                 count_true = count_true + 1
-                # print("index: " + str(i + 1))
-                # print("true: " + mlb.classes_[i])
+                print("index: " + str(i + 1))
+                print("true: " + mlb.classes_[i])
                 break
         if check_correct == 0:
             result_array.append(0)
@@ -132,43 +125,44 @@ def load_data(filepath, filepath_mlb):
         print("file not found")
 
 
-load_data("train_store.pkl", "mlb_data.pkl")
+def processor():
+    load_data("train_store.pkl", "mlb_data.pkl")
+    sql = "SELECT * FROM products WHERE  category_id != 9999"
+    cursor.execute(sql)
+    data = cursor.fetchall()
 
-sql = "SELECT * FROM products WHERE  category_id != 9999 AND is_active = 1"
-cursor.execute(sql)
-data = cursor.fetchall()
+    print("loading data..")
+    # data_1
+    tex = []
+    for row in data:
+        tex.append([row[3]])
+        tex.append([unidecode(row[3])])
+    for i in range(0, len(tex)):
+        vectorizer = CountVectorizer()
+        vectorizer.fit(tex[i])
+        tex[i] = vectorizer.get_feature_names()
 
-print("loading data..")
-# data_1
-tex = []
-for row in data:
-    tex.append([row[3]])
-    tex.append([unidecode(row[3])])
-for i in range(0, len(tex)):
-    vectorizer = CountVectorizer()
-    vectorizer.fit(tex[i])
-    tex[i] = vectorizer.get_feature_names()
+    new_mlb = MultiLabelBinarizer()
+    v = new_mlb.fit_transform(tex)
+    # data2
+    s1 = []
+    for (row) in data:
+        s1.append(row[12])
+        s1.append(row[12])
 
-new_mlb = MultiLabelBinarizer()
-v = new_mlb.fit_transform(tex)
-# data2
-s1 = []
-for (row) in data:
-    s1.append(row[12])
-    s1.append(row[12])
+    train_X, test_X, train_Y, test_Y = train_test_split(v, np.array(s1), test_size=0.2, random_state=1)
+    print("training...")
+    new_clf = KNeighborsClassifier(n_neighbors=1, p=2, weights="distance")
+    new_clf.fit(train_X, train_Y)
+    pre = new_clf.predict(test_X)
+    print(accuracy_score(test_Y, pre))
+    pickle.dump(new_clf, open("train_store.pkl", 'wb'))
+    pickle.dump(new_mlb, open("mlb_data.pkl", 'wb'))
+    print("training complete")
+    return new_clf, new_mlb
 
-# train_X, test_X, train_Y, test_Y = train_test_split(v, np.array(s1), test_size=0.1, random_state=1)
 
-print("training...")
-print("size: ", len(s1))
-new_clf = GaussianNB()
-new_clf.fit(v, np.array(s1))
-# new_clf.fit(train_X, train_Y)
-# pre = new_clf.predict(test_X)
-# print(accuracy_score(test_Y, pre))
-pickle.dump(new_clf, open("train_store.pkl", 'wb'))
-pickle.dump(new_mlb, open("mlb_data.pkl", 'wb'))
-predict_word(new_clf, new_mlb)
-print("training complete")
-
-cnx.close()
+if __name__ == '__main__':
+    clf, mlb = processor()
+    predict_word(clf, mlb)
+    cnx.close()
