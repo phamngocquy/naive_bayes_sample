@@ -68,35 +68,40 @@ def load_data(filepath, filepath_mlb):
         print("file not found")
 
 
-load_data("train_store_2.pkl", "mlb_data_2.pkl")
+def pre_processor():
+    load_data("train_store_2.pkl", "mlb_data_2.pkl")
 
-sql = "SELECT * FROM products  WHERE is_active = 1 AND category_id != 9999"
-cursor.execute(sql)
-data = cursor.fetchall()
+    sql = "SELECT * FROM products  WHERE is_active = 1 AND category_id != 9999"
+    cursor.execute(sql)
+    data = cursor.fetchall()
 
-print("loading data..")
-# data_1
-tex = []
-for row in data:
-    tex.append(row[3])
-    tex.append(unidecode(row[3]))
-vectorizer = CountVectorizer()
-v = vectorizer.fit_transform(tex)
+    print("loading data..")
+    # data_1
+    tex = []
+    for row in data:
+        tex.append(row[3])
+        tex.append(unidecode(row[3]))
+    vectorizer = CountVectorizer()
+    v = vectorizer.fit_transform(tex)
 
-# data2
-s1 = []
-for (row) in data:
-    s1.append(row[12])
-    s1.append(row[12])
+    # data2
+    s1 = []
+    for (row) in data:
+        s1.append(row[12])
+        s1.append(row[12])
 
-print("training...")
-train_X, test_X, train_Y, test_Y = train_test_split(v, np.array(s1), test_size=0.2, random_state=1)
-new_clf = MultinomialNB()
-new_clf.fit(train_X, train_Y)
-pre = new_clf.predict(test_X)
-print(accuracy_score(test_Y, pre))
-print("training complete")
-# pickle.dump(new_clf, open("train_store_2.pkl", 'wb'))
-# pickle.dump(vectorizer.get_feature_names(), open("mlb_data_2.pkl", 'wb'))
-predict_word(new_clf, vectorizer.get_feature_names())
-cnx.close()
+    print("training...")
+    train_X, test_X, train_Y, test_Y = train_test_split(v, np.array(s1), test_size=0.2, random_state=1)
+    new_clf = MultinomialNB()
+    new_clf.fit(train_X, train_Y)
+    pre = new_clf.predict(test_X)
+    print(accuracy_score(test_Y, pre))
+    print("training complete")
+    pickle.dump(new_clf, open("train_store_2_multinomialNB.pkl", 'wb'))
+    pickle.dump(vectorizer.get_feature_names(), open("mlb_data_2_multinomialNB.pkl", 'wb'))
+    predict_word(new_clf, vectorizer.get_feature_names())
+    cnx.close()
+
+
+if __name__ == '__main__':
+    pre_processor()

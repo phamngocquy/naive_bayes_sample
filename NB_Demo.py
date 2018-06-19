@@ -85,8 +85,8 @@ def convert_input(name, mlb):
                 result_array.append(1)
                 check_correct = 1
                 count_true = count_true + 1
-                # print("index: " + str(i + 1))
-                # print("true: " + mlb.classes_[i])
+                print("index: " + str(i + 1))
+                print("true: " + mlb.classes_[i])
                 break
         if check_correct == 0:
             result_array.append(0)
