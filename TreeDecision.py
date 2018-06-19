@@ -2,10 +2,9 @@ import pandas as pd
 from sklearn import tree
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import make_pipeline
-from sklearn.metrics import confusion_matrix
-from sklearn.feature_extraction.text import CountVectorizer
 
 
 #  print all matrix

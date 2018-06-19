@@ -114,11 +114,14 @@ def classification_data_to_new_db(clf, mlb):
 
 
 def load_data(filepath, filepath_mlb):
+    print("checking data store")
     my_clf_file = Path(filepath)
     my_mlb_file = Path(filepath_mlb)
     if my_clf_file.is_file() and my_mlb_file.is_file():
+        print("loading data store....")
         clf = pickle.load(open(filepath, 'rb'))
         mlb = pickle.load(open(filepath_mlb, 'rb'))
+        print("loading data store complete")
         predict_word(clf, mlb)
         # classification_data_to_new_db(clf, mlb)
     else:

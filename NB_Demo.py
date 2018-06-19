@@ -127,43 +127,47 @@ def load_data(filepath, filepath_mlb):
         print("file not found")
 
 
-load_data("train_store.pkl", "mlb_data.pkl")
+def pre_processor():
+    load_data("train_store_GaussianNB.pkl", "mlb_data_GaussianNB.pkl")
 
-sql = "SELECT * FROM products WHERE  category_id != 9999 AND is_active = 1"
-cursor.execute(sql)
-data = cursor.fetchall()
+    sql = "SELECT * FROM products WHERE  category_id != 9999 AND is_active = 1"
+    cursor.execute(sql)
+    data = cursor.fetchall()
 
-print("loading data..")
-# data_1
-tex = []
-for row in data:
-    tex.append([row[3]])
-    tex.append([unidecode(row[3])])
-for i in range(0, len(tex)):
-    vectorizer = CountVectorizer()
-    vectorizer.fit(tex[i])
-    tex[i] = vectorizer.get_feature_names()
+    print("loading data..")
+    # data_1
+    tex = []
+    for row in data:
+        tex.append([row[3]])
+        tex.append([unidecode(row[3])])
+    for i in range(0, len(tex)):
+        vectorizer = CountVectorizer()
+        vectorizer.fit(tex[i])
+        tex[i] = vectorizer.get_feature_names()
 
-new_mlb = MultiLabelBinarizer()
-v = new_mlb.fit_transform(tex)
-# data2
-s1 = []
-for (row) in data:
-    s1.append(row[12])
-    s1.append(row[12])
+    new_mlb = MultiLabelBinarizer()
+    v = new_mlb.fit_transform(tex)
+    # data2
+    s1 = []
+    for (row) in data:
+        s1.append(row[12])
+        s1.append(row[12])
 
-# train_X, test_X, train_Y, test_Y = train_test_split(v, np.array(s1), test_size=0.1, random_state=1)
+    train_X, test_X, train_Y, test_Y = train_test_split(v, np.array(s1), test_size=0.2, random_state=1)
 
-print("training...")
-print("size: ", len(s1))
-new_clf = GaussianNB()
-new_clf.fit(v, np.array(s1))
-# new_clf.fit(train_X, train_Y)
-# pre = new_clf.predict(test_X)
-# print(accuracy_score(test_Y, pre))
-pickle.dump(new_clf, open("train_store.pkl", 'wb'))
-pickle.dump(new_mlb, open("mlb_data.pkl", 'wb'))
-predict_word(new_clf, new_mlb)
-print("training complete")
+    print("training...")
+    new_clf = GaussianNB()
+    # new_clf.fit(v, np.array(s1))
+    new_clf.fit(train_X, train_Y)
+    pre = new_clf.predict(test_X)
+    print(accuracy_score(test_Y, pre))
+    pickle.dump(new_clf, open("train_store_GaussianNB.pkl", 'wb'))
+    pickle.dump(new_mlb, open("mlb_data_GaussianNB.pkl", 'wb'))
+    predict_word(new_clf, new_mlb)
+    print("training complete")
 
-cnx.close()
+    cnx.close()
+
+
+if __name__ == '__main__':
+    pre_processor()
