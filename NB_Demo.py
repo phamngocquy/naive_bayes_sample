@@ -3,14 +3,16 @@ from pathlib import Path
 
 import mysql.connector
 import numpy as np
+from sklearn.model_selection import cross_val_score
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import MultiLabelBinarizer
 from unidecode import unidecode
-from sklearn.naive_bayes import BernoulliNB
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
-import pandas as pd
+from skmultilearn.adapt import MLkNN
+from sklearn.pipeline import make_pipeline
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 config = {
     'user': 'root',
@@ -60,8 +62,8 @@ def predict_word(clf, mlb):
                     check_correct = 0
             if count_true > 0:
                 result_id_ = clf.predict_proba([result_array])
-                result_id = clf.predict([result_array])
 
+                result_id = clf.predict([result_array])
                 cursor.execute("SELECT name FROM categories WHERE  id = " + str(result_id[0]))
                 final_data = cursor.fetchall()
                 print(final_data)
@@ -96,6 +98,7 @@ def convert_input(name, mlb):
 
 
 def classification_data_to_new_db(clf, mlb):
+    print("data mapping.....")
     sql_c = "SELECT * FROM products WHERE category_id = 9999"
     cursor_.execute(sql_c)
     data_c = cursor_.fetchall()
@@ -154,18 +157,22 @@ def pre_processor():
         s1.append(row[12])
 
     train_X, test_X, train_Y, test_Y = train_test_split(v, np.array(s1), test_size=0.2, random_state=1)
-
     print("training...")
     new_clf = GaussianNB()
-    # new_clf.fit(v, np.array(s1))
+    # new_clf = MLkNN(k=2)
+    new_clf.fit(v, np.array(s1))
     new_clf.fit(train_X, train_Y)
     pre = new_clf.predict(test_X)
     print(accuracy_score(test_Y, pre))
     pickle.dump(new_clf, open("train_store_GaussianNB.pkl", 'wb'))
     pickle.dump(new_mlb, open("mlb_data_GaussianNB.pkl", 'wb'))
-    predict_word(new_clf, new_mlb)
+
     print("training complete")
 
+    scores = cross_val_score(new_clf, train_X, train_Y,
+                             cv=10, scoring='f1_macro')
+    print("Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
+    predict_word(new_clf, new_mlb)
     cnx.close()
 
 

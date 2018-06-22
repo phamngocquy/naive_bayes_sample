@@ -6,6 +6,7 @@
       <w>ckpt</w>
       <w>classe</w>
       <w>cuonggt</w>
+      <w>dbpedia</w>
       <w>feedforward</w>
       <w>filepath</w>
       <w>haku</w>
@@ -24,6 +25,7 @@
       <w>teko</w>
       <w>tensorflow</w>
       <w>toarray</w>
+      <w>unparsed</w>
       <w>vectorizer</w>
       <w>xbar</w>
       <w>xlabel</w>

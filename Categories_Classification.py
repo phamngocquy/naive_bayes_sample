@@ -64,14 +64,14 @@ trainY_Category, correct_Data_Category = load_train_category_data()
 
 # GLOBAL PARAMETERS
 
-print(trainX_Product.shape)
-print(trainY_Category.shape)
+# print(trainX_Product.shape)
+# print(trainY_Category.shape)
 
 numFeatures = trainX_Product.shape[1]
 numLabels = trainY_Category.shape[1]
 
-print(numFeatures)
-print(numLabels)
+# print(numFeatures)
+# print(numLabels)
 numEpochs = 200
 learningRate = tf.train.exponential_decay(learning_rate=0.0008,
                                           global_step=1,
@@ -81,8 +81,8 @@ learningRate = tf.train.exponential_decay(learning_rate=0.0008,
 
 X = tf.placeholder(tf.float32, [None, numFeatures])
 yGold = tf.placeholder(tf.float32, [None, numLabels])
-print(X)
-print(yGold)
+# print(X)
+# print(yGold)
 # VARIABLES
 
 weights = tf.Variable(tf.random_normal([numFeatures, numLabels],
@@ -104,7 +104,7 @@ print(bias)
 ######################
 
 # INITIALIZE our weights and biases
-init_OP = tf.global_variables_initializer()
+init_OP = tf.initialize_all_variables()
 
 # PREDICTION ALGORITHM i.e. FEEDFORWARD ALGORITHM
 apply_weights_OP = tf.matmul(X, weights, name="apply_weights")
@@ -116,7 +116,7 @@ activation_OP = tf.nn.sigmoid(add_bias_OP, name="activation")
 #####################
 
 # COST FUNCTION i.e. MEAN SQUARED ERROR
-cost_OP = tf.nn.l2_loss(activation_OP - yGold, name="squared_error_cost")
+cost_OP = tf.nn.l2_loss(activation_OP - yGold, name="squared_error_cost") #sai
 
 #######################
 ### OPTIMIZATION OP ###
@@ -238,7 +238,6 @@ saver = tf.train.Saver()
 saver.save(sess, "/home/haku/PycharmProjects/DemoOnce/trained_variables.ckpt")
 
 print("train complete")
-
 
 # Close tensorflow session
 sess.close()
